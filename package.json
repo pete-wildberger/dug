@@ -1,0 +1,8 @@
+{
+  "name": "dug",
+  "version": "1.0.0",
+  "description": "Fetch api wrapper",
+  "main": "index.js",
+  "author": "Peter Wildberger",
+  "license": "MIT"
+}
