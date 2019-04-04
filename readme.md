@@ -1,5 +1,6 @@
 `webpack --config-name prod`
 example usage:
+info on setting up ts modules on npm: https://stackoverflow.com/questions/39276023/error-ts2306-index-d-ts-is-not-a-module
 
 ````import { Dug } from 'dug';
 
