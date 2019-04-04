@@ -1,3 +1,5 @@
+import { addParams } from './utils';
+
 export class Dug {
   private config: RequestInit;
   private errorHandler: (response: Response) => Response | PromiseLike<Response>;
@@ -5,7 +7,10 @@ export class Dug {
     this.config = config;
     this.errorHandler = handleError;
   }
-  get = (url: string): Promise<any> => {
+  get = (url: string, params?: { [key: string]: any }): Promise<any> => {
+    if (params !== null) {
+      url = url += addParams(params);
+    }
     let options: RequestInit = { ...this.config };
     options.method = 'GET';
     return fetch(url, options) // body data type must match "Content-Type" header
