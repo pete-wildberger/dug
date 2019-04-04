@@ -33,6 +33,14 @@ export class Dug {
       .then(this.errorHandler)
       .then(response => response.json()); // parses response to JSON
   };
+  patch = (url: string, data: { [key: string]: any }): Promise<any> => {
+    let options: RequestInit = { ...this.config };
+    options.method = 'PATCH';
+    options.body = JSON.stringify(data);
+    return fetch(url, options) // body data type must match "Content-Type" header
+      .then(this.errorHandler)
+      .then(response => response.json()); // parses response to JSON
+  };
 
   delete = (url: string): Promise<any> => {
     let options: RequestInit = { ...this.config };
